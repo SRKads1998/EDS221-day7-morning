@@ -55,3 +55,37 @@ inner_join(animals, sites)
 semi_join(animals, sites)
 
 anti_join(animals, sites)
+library(lubridate)
+
+#practice w/ lubridate
+my_date <- "03-13-1998"
+lubridate::mdy(my_date)
+
+# new format for date
+my_date2 <- "08-June-1974"
+lubridate::dmy(my_date2)
+my_date3 <- "19160518"
+lubridate::ymd(my_date3)
+
+# what happens if the date  don't make sense
+lubridate::mdy("1942-08-30")
+
+lubridate::dmy("09/12/84")
+
+# workin w/ times
+time <- "2020-8-12 11:18"
+time <- ymd_hm(time)
+
+# convert to PDT with_tz to add time zone 
+with_tz(time, "America/Los_Angeles")
+
+# extract info from dates
+week(time)
+year(time)
+day(time)
+
+start_time <- Sys.time()
+
+end_time <- Sys.time()
+
+end_time - start_time
